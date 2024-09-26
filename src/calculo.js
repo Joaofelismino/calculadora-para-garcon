@@ -5,12 +5,12 @@ const readline = require('./calculo.test');
 
 //Defini uma função para calcular a conta
 function calcularConta(numeroPessoas, valorTotal, metodoPagamento) {
-    // Verifica se o pagamento é por PIX, dinheiro ou cartão para aplicar o desconto
+    // Verifica se o pagamento é por PIX ou dinheiro para aplicar o desconto
     let desconto = 0;
-    if (metodoPagamento === 'PIX' || metodoPagamento === 'dinheiro' || !cartão) {
+    const cartão = desconto
+    if (metodoPagamento === 'PIX' || metodoPagamento === 'dinheiro' ) {
       desconto = valorTotal * 0.1; // Calcula 10% de desconto
     }
-  
     // Calcula o valor total com o desconto
     const valorComDesconto = valorTotal - desconto;
   
@@ -22,4 +22,8 @@ function calcularConta(numeroPessoas, valorTotal, metodoPagamento) {
   }
   
   // Exemplo de uso:
-  calcularConta(4, 100, 'PIX');
+  calcularConta(4, 100, 'cartão');
+
+  module.exports = {
+    calcularConta
+  };
