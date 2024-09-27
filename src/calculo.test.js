@@ -1,7 +1,7 @@
 // Importando a função
 const {
     calcularConta
-    } = require("..src/calculo");
+    } = require("./index");
 
 test('Deve calcular o valor por pessoa com desconto', () => {
   let resultado = calcularConta(4, 100, 'PIX');
