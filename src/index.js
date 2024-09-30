@@ -4,7 +4,7 @@
 function calcularConta(numeroPessoas, valorTotal, metodoPagamento) {
     // Verifica se o pagamento é por PIX ou dinheiro para aplicar o desconto
     let desconto = 0;
-    const cartão = desconto //
+    const cartão = desconto
     if (metodoPagamento === 'PIX' || metodoPagamento === 'dinheiro' ) {
       desconto = valorTotal * 0.1; // Calcula 10% de desconto
     }
@@ -16,8 +16,9 @@ function calcularConta(numeroPessoas, valorTotal, metodoPagamento) {
   
     // Exibe o resultado
     const valorPessoaInt = parseFloat(valorPorPessoa.toFixed(2))
+
     console.log(`Cada pessoa deve pagar R$ ${valorPessoaInt}`);
-    console.log(typeof valorPessoaInt)
+    
     return valorPessoaInt
   }
   
