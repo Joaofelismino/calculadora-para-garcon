@@ -4,22 +4,40 @@ const readline = require('readline-sync'); //Importa a biblioteca readline-sync 
 
 //Defini uma função para calcular a conta
 function calcularConta() {
+  // 
+  let numeroPessoas;
+    while (true) {
+        numeroPessoas = parseInt(readline.question("Digite o número de pessoas:"));
+        if (numeroPessoas > 0) {
+            break;
+        } else {
+            console.log("O número de pessoas deve ser maior que zero.")};
+    }
 
-  // Utiliza a função readline.question() para apresentar uma pergunta ao usuário e armazenar a resposta nas variáveis numeroPessoas, valorTotal e metodoPagamento.
-  const numeroPessoas = parseInt(readline.question("Digite o numero de pessoas:")); //parseInt converte valores para numeros inteiros.
-  const valorTotal = parseFloat(readline.question("Digite o valor total da conta:")); //parseFloat converte valores para ponto flutuante(números com casa decimal).
-  const metodoPagamento = readline.question("Digite o metodo de pagamento (PIX, dinheiro ou cartao):").toLowerCase(); //toLowerCase converte para letras minusculas.
+  let valorTotal;
+  while (true) {
+      valorTotal = parseFloat(readline.question("Digite o valor total da conta:"));
+      if (valorTotal > 0) {
+          break;
+      } else {
+          console.log("O valor total deve ser maior que zero.")};
+  }
 
-  // Verifica se o pagamento é por PIX ou dinheiro para aplicar o desconto
-    let desconto = 0;
-    
-    if (metodoPagamento === "cartão") {desconto = 0;
-    } else if (metodoPagamento === 'pix' || metodoPagamento === 'dinheiro' ) {
-      desconto = valorTotal * 0.1; // Calcula 10% de desconto
-    } else{console.log("Método de pagamento inválido. Os métodos de pagamento válidos são dinheiro, pix ou cartão");
-      return;
-    };
+ // Validação do método de pagamento em um loop
+ let metodoPagamento;
+ while (true) {
+   metodoPagamento = readline.question("Digite o método de pagamento (PIX, dinheiro ou cartao):").toLowerCase();
+   if (/^(pix|dinheiro|cartao)$/.test(metodoPagamento)) {
+     break; // Sai do loop se o método de pagamento for válido
+   } else {
+     console.log("Método de pagamento inválido. Por favor, digite PIX, dinheiro ou cartao.")};
+ }
 
+ // Calcula o desconto
+ let desconto = 0;
+ if (metodoPagamento === 'pix' || metodoPagamento === 'dinheiro') {
+   desconto = valorTotal * 0.1;
+ }
     // Calcula o valor total com o desconto
     const valorComDesconto = valorTotal - desconto;
   
