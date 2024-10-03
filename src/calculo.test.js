@@ -4,15 +4,15 @@ const {
     } = require("./index");
 
     it('deve calcular o valor por pessoa corretamente para pagamento com PIX', () => {
-      // Arrange: Prepara os dados de entrada
+      // Prepara os dados de entrada
       const numeroPessoas = 3;
       const valorTotal = 100;
       const metodoPagamento = 'pix';
     
-      // Act: Executa a função
+      // Executa a função
       const resultado = calcularConta(numeroPessoas, valorTotal, metodoPagamento);
     
-      // Assert: Verifica o resultado esperado
+      // Verifica o resultado esperado
       expect(resultado).toBeCloseTo(30);
     });
 
