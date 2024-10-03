@@ -49,6 +49,8 @@ function calcularConta() {
 
     // Exibe o resultado
     console.log("Cada pessoa deve pagar R$", valorPessoaFormatado)
+
+    return valorPessoaFormatado
   }
   
   // Chamando a função:
