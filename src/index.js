@@ -3,6 +3,7 @@ const readline = require('readline-sync');
 
 //Define uma função chamada calcularConta que encapsula toda a lógica para calcular o valor a ser pago por pessoa.
 function calcularConta() {
+
   // Solicita ao usuário o número de pessoas e valida a entrada
   let numeroPessoas;
   do {
@@ -12,6 +13,7 @@ function calcularConta() {
     }
   } while (isNaN(numeroPessoas) || numeroPessoas <= 0);
   
+
   // Solicita ao usuário o valor total da conta e valida a entrada
   let valorTotal;
   do {
@@ -20,6 +22,7 @@ function calcularConta() {
       console.log("Por favor, digite um valor total válido (maior que zero).");
     }
   } while (isNaN(valorTotal) || valorTotal <= 0);
+
 
   // Solicita ao usuário o método de pagamento e valida a entrada
   let metodoPagamento;
@@ -30,12 +33,14 @@ function calcularConta() {
     }
   } while (!/^(pix|dinheiro|cartao)$/.test(metodoPagamento));
   
+
   // Calcula o desconto (10%) para pagamentos com PIX ou dinheiro
   let desconto = 0;
   if (metodoPagamento === 'pix' || metodoPagamento === 'dinheiro') {
     desconto = valorTotal * 0.1;
   }
 
+  
   // Calcula o valor total com o desconto
   const valorComDesconto = valorTotal - desconto;
 
