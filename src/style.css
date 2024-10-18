@@ -1,0 +1,44 @@
+.sessao{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo_pizzaria{
+    margin: 30px;
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.parametro{
+    width: 400px;
+    height: 42px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5em;
+}
+
+.provisorio{
+width: 400px;
+height: 42px;
+
+}
+
+.provisorio, .caixa_de_selecao{
+margin: 5px;
+}
+
+.botao_calcular{
+    width: 400px;
+    height: 40px;
+    margin-top: 50px; 
+    border-radius: 10px;
+    background-color: #284a5e;
+    color: #f0f0f0;
+}
