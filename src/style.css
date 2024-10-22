@@ -30,6 +30,8 @@
 }
 
 .conteudo_da_caixa{
+    width: 400px;
+    height: 42px;
     border-color: #CCCCCC;
     border: 1px solid #ddd;
     border-radius: 6px;

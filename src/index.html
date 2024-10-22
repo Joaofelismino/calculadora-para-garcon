@@ -5,34 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>pizzaria</title>
     <link rel="stylesheet" href="style.css">
+   
 </head>
 <body>
     <section class="toda_a_sessao">
         <div>
-            <img src="/src/img/Pizzaria Logo.png" alt="Logo da Pizzaria" class="logo_pizzaria">
+            <img src="../src/img/Pizzaria Logo.png" alt="Logo da Pizzaria" class="logo_pizzaria">
         </div>
         <div>
-            <form action="" class="Todo_o_formulario">
-                <label class="parametro">Valor total da conta:<input type="text" class="conteudo_da_caixa" id="total"></label>  
-                <label class="parametro">Incluir da taxa de serviço:<select name="serviço" id="serviço" class="conteudo_da_caixa">
+            <form  class="Todo_o_formulario" id="formMesa">
+                <label class="parametro">Valor total da conta:</label>
+                <input type="text" class="conteudo_da_caixa" id="total">  
+                <label class="parametro">Incluir da taxa de serviço:</label>
+                <select name="serviço" id="serviço" class="conteudo_da_caixa">
                     <option value="sim">sim</option>
                     <option value="não">não</option>
-                </select></label>
-                <label class="parametro">Quantidade de pagantes:<select name="quantidade" id="quantidade" class="conteudo_da_caixa">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                </label>
-                <input type="submit" value="CALCULAR" class="botao_calcular">
+                </select>
+                <label class="parametro">Quantidade de pagantes:</label>
+                <select name="quantidade" id="quantidade" class="conteudo_da_caixa">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <button type="submit" class="botao_calcular">calcular</button>
             </form>
         </div>
     </section>
+    <script src="../src/index.js"></script>
 </body>
+
 </html>
