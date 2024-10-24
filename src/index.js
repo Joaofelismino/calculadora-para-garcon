@@ -42,8 +42,8 @@ const restaurante = {
           produto : "Esfiha de carne ",
           descricao : "Esfiha  de carne assada ",
           bordasRecheadas : "não",
-          valor : 2,
-          quantidade : 10
+          valor : 50,
+          quantidade : 2
         }
       }  
     }
@@ -63,19 +63,46 @@ function calcularPedido(event){
   let valorConta = document.getElementById("total").value;
   let taxaServiço = document.getElementById("servico").value;
   let qtdePagantes = document.getElementById("quantidade").value;
+
+  const obj = {
+      valor : valorConta,
+      qtdePagantes : qtdePagantes
+  };
+
+
+  restaurante.pedidos.pedido3 = obj; 
+
+  console.log(restaurante.pedidos);
+
+  let resultado = document.getElementById("resultado");
+  let taxa= document.getElementById("taxaServico");
+  let totalPessoa = document.getElementById("totalPessoa");
+
+  
   
   //reduce uso para a soma dos itens uasndo a quantidade tbm.
   //aqui seria um subtotal pois ainda não está aplicado o desconto ou incremento dos 10%
-  const total = Object.values(restaurante.pedidos.pedido1.itens).reduce((soma, item) => {
+  const total = Object.values(restaurante.pedidos.pedido2.itens).reduce((soma, item) => {
     return soma + (item.valor * item.quantidade);
   }, 0);
   
   //adiciono o valor calculado acima ao obj
-  restaurante.pedidos.pedido1.valorTotal = total;
-  //console.log(total);
+  //restaurante.pedidos.pedido2.valorTotal = total*0.9;
+  //desconto
+  restaurante.pedidos.pedido2.valorTotal
 
-  console.log(`Valor total do pedido: R$ ${restaurante.pedidos.pedido1.valorTotal}`);
-  console.log(restaurante);
+  //taxa de serviço
+  //restaurante.pedidos.pedido2.valorTotal = total*0.05;
+
+  resultado.textContent = total*0.90;
+  taxa.textContent = total*0.05;
+
+  //calculo por pessoa
+  const calculoPorPessoa = (total*0.90 + total*0.05)/qtdePagantes;
+  totalPessoa.textContent = calculoPorPessoa;
+
+  //console.log(`Valor total do pedido: R$ ${restaurante.pedidos.pedido1.valorTotal}`);
+  //console.log(restaurante);
 }
 
 

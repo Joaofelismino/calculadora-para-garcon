@@ -41,12 +41,23 @@
     </section>
 
     <dialog id="modal" class="modal">
-        <div class="modal-content">
+        <div class="modal-conteudo">
             <span class="close" onclick="document.getElementById('modal').close()">&times;</span>
             <p>Esse pagamento terá desconto?</p>
             <p>O desconto é válido para pagamentos em dinheiro, débito ou Pix.</p>
-            <button id="Sim">Sim</button>
-            <button id="Nao">Não</button>
+            <button id="Sim" onclick="document.getElementById('modal').close(), document.getElementById('modalResultado').showModal()">Sim</button>
+            <button id="Nao" onclick="document.getElementById('modal').close(), document.getElementById('modalResultado').showModal()">Não</button>
+        </div>
+    </dialog>
+
+    <dialog id="modalResultado" class="modal">
+        <div class="modal-conteudo">
+            <span class="close" onclick="document.getElementById('modalResultado').close()">&times;</span>
+            <h2>Valor da Conta: </h2>
+            <p id="resultado"></p>
+            <p id="taxaServico"></p>
+            <p id="totalPessoa"></p>
+            <button onclick="document.getElementById('modalResultado').close()">Concluir</button>
         </div>
     </dialog>
        
