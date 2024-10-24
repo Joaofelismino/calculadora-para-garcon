@@ -10,14 +10,14 @@
 <body>
     <section class="toda_a_sessao">
         <div>
-            <img src="../src/img/Pizzaria Logo.png" alt="Logo da Pizzaria" class="logo_pizzaria">
+            <img src="/img/Pizzaria_Logo.png" alt="Logo da Pizzaria" class="logo_pizzaria">         
         </div>
         <div>
             <form  class="Todo_o_formulario" id="formMesa">
                 <label class="parametro">Valor total da conta:</label>
                 <input type="text" class="conteudo_da_caixa" id="total">  
                 <label class="parametro">Incluir da taxa de serviço:</label>
-                <select name="serviço" id="serviço" class="conteudo_da_caixa">
+                <select name="serviço" id="servico" class="conteudo_da_caixa">
                     <option value="sim">sim</option>
                     <option value="não">não</option>
                 </select>
@@ -34,22 +34,24 @@
                     <option value="9">9</option>
                     <option value="10">10</option>
                 </select>
-                <button type="submit" class="botao_calcular">CALCULAR</button>
+                <!--<button type="submit" class="botao_calcular">CALCULAR</button>-->
+                <button type="submit" class="botao_calcular" onclick="document.getElementById('modal').showModal()">Calcular</button>
             </form>
         </div>
     </section>
 
-    <div id="modal" class="modal">
+    <dialog id="modal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close" onclick="document.getElementById('modal').close()">&times;</span>
             <p>Esse pagamento terá desconto?</p>
             <p>O desconto é válido para pagamentos em dinheiro, débito ou Pix.</p>
             <button id="opcaoSim">Sim</button>
             <button id="opcaoNao">Não</button>
         </div>
-    </div>
+    </dialog>
+       
 
-    <script src="../src/index.js"></script>
+    <script src="/index.js"></script>
 </body>
 
 </html>
