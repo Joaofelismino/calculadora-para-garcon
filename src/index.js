@@ -55,55 +55,48 @@ const restaurante = {
 
 };
 
-//calcular soma do pedido
-function calcularPedido(event){
+function abrirModal(event) {
+  // Evita o recarregamento da página ao abrir o modal
   event.preventDefault();
-
-  // capiturar os valores dos inputs
-  let valorConta = document.getElementById("total").value;
-  let taxaServiço = document.getElementById("servico").value;
-  let qtdePagantes = document.getElementById("quantidade").value;
-
-  const obj = {
-      valor : valorConta,
-      qtdePagantes : qtdePagantes
-  };
-
-
-  restaurante.pedidos.pedido3 = obj; 
-
-  console.log(restaurante.pedidos);
-
-  let resultado = document.getElementById("resultado");
-  let taxa= document.getElementById("taxaServico");
-  let totalPessoa = document.getElementById("totalPessoa");
-
   
+  // Captura o valor total da conta
+  const totalConta = document.getElementById('total').value;
+
+  // Tratamento de erro: Verifica se o valor total está vazio ou é inválido
+  if (!totalConta) {
+      alert("Por favor, insira um valor para o total da conta.");
+      return;
+  }
+
+  const totalValor = parseFloat(totalConta);
   
-  //reduce uso para a soma dos itens uasndo a quantidade tbm.
-  //aqui seria um subtotal pois ainda não está aplicado o desconto ou incremento dos 10%
-  const total = Object.values(restaurante.pedidos.pedido2.itens).reduce((soma, item) => {
-    return soma + (item.valor * item.quantidade);
-  }, 0);
-  
-  //adiciono o valor calculado acima ao obj
-  //restaurante.pedidos.pedido2.valorTotal = total*0.9;
-  //desconto
-  restaurante.pedidos.pedido2.valorTotal
+  // Verifica se o valor é maior que zero
+  if (isNaN(totalValor) || totalValor <= 0) {
+      alert("Por favor, insira um valor válido maior que zero.");
+      return;
+  }
 
-  //taxa de serviço
-  //restaurante.pedidos.pedido2.valorTotal = total*0.05;
-
-  resultado.textContent = total*0.90;
-  taxa.textContent = total*0.05;
-
-  //calculo por pessoa
-  const calculoPorPessoa = (total*0.90 + total*0.05)/qtdePagantes;
-  totalPessoa.textContent = calculoPorPessoa;
-
-  //console.log(`Valor total do pedido: R$ ${restaurante.pedidos.pedido1.valorTotal}`);
-  //console.log(restaurante);
+  document.getElementById('modal').showModal();
 }
 
+function calcularConta(comDesconto) {
+  const totalConta = parseFloat(document.getElementById('total').value);
+  const incluirServico = document.getElementById('servico').value === "sim";
+  const numPagantes = parseInt(document.getElementById('quantidade').value);
 
-document.getElementById("formMesa").addEventListener("submit", calcularPedido);
+  const taxaServico = incluirServico ? 0.05 : 0;
+  let valorFinal = totalConta + (totalConta * taxaServico);
+  
+  if (comDesconto) {
+      valorFinal *= 0.9;
+  }
+
+  const valorPorPessoa = valorFinal / numPagantes;
+
+  document.getElementById('resultado').textContent = `Valor total: R$ ${valorFinal.toFixed(2)}`;
+  document.getElementById('taxaServico').textContent = taxaServico > 0 ? 'Com taxa de serviço (5%)' : 'Sem taxa de serviço';
+  document.getElementById('totalPessoa').textContent = `Valor por pessoa: R$ ${valorPorPessoa.toFixed(2)}`;
+
+  document.getElementById('modal').close();
+  document.getElementById('modalResultado').showModal();
+}
