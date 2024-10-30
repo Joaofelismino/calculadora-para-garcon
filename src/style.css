@@ -1,36 +1,31 @@
-.parametro , .botao_calcular{
+.parametro , .botao_calcular , .ExibicaoCalculoFinal , .OBSdesconto{
   font-family: "Space Grotesk", sans-serif;
   font-optical-sizing: auto;
   font-weight: weight;
   font-style: normal;
 }
-
 .toda_a_sessao{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
 .logo_pizzaria{
     margin: 30px;
     margin-bottom: 68px;
     width: 381px;
     height: 353px;
 }
-
 .Todo_o_formulario{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
 .parametro{
     width: 400px;
     text-align: left;
     font-size: 15px;
     margin-bottom: 10px;
 }
-
 .conteudo_da_caixa{
     width: 400px;
     height: 42px;
@@ -38,8 +33,6 @@
     border: 1px solid #ddd;
     border-radius: 6px;
     margin-bottom: 25px;
-    
-    
 }
 .botao_calcular{
     width: 400px;
@@ -63,6 +56,7 @@
     background-color: rgba(0, 0, 0, 0.5);
 }
 .modal-conteudo {
+    position: relative;
     background-color: #fff;
     margin: 15% auto; 
     padding: 20px;
@@ -72,7 +66,7 @@
     text-align: center;
     border-radius: 8px; 
 }
-.botaoModal , .modal-conteudo p {
+.botaoModal , .modal-conteudo p , .CONCLUIR {
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
@@ -91,20 +85,26 @@
     color: #ffffff;
 }
 .ExibicaoCalculoFinal , .OBSdesconto{
-color:#54595E99;
+    color:#54595E99;
 }
 .close{
-display:block;
-font-size: 30px;
-margin-left: 95%;
-width: 24px;
-height: 24px;
-background-color: #e5e5e5;
-border-radius: 50%;
-font-weight: bold;
-}
-.close div{
-    width: 10px;
-    height: 10px;
+    position: absolute;
+    display:flex;
+    font-size: 24px;
+    margin-left: 95%;
+    top: 10px;        
+    right: 10px;      
+    width: 24px;
+    height: 24px;
+    background-color: #e5e5e5;
+    border-radius: 50%;
+    font-weight: bold;
+    cursor: pointer;
+    align-items: center;    
+    justify-content: center; 
     
+}
+.close:hover {
+    background-color: #ffcccc; /* Fundo ao passar o mouse */
+    color: #d00;               /* Cor do X ao passar o mouse */
 }
