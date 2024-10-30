@@ -56,10 +56,10 @@ const restaurante = {
 };
 
 function abrirModal(event) {
-  // Evita o recarregamento da página ao abrir o modal
+  // Não deixa recarregar a página ao abrir o modal
   event.preventDefault();
   
-  // Captura o valor total da conta
+  // Pega o valor total da conta
   const totalConta = document.getElementById('total').value;
 
   // Tratamento de erro: Verifica se o valor total está vazio ou é inválido

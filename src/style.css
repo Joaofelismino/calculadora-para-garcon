@@ -1,3 +1,10 @@
+.parametro , .botao_calcular{
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
 .toda_a_sessao{
     display: flex;
     flex-direction: column;
@@ -15,17 +22,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: Arial, sans-serif;
 }
 
 .parametro{
     width: 400px;
-    height: 42px;
-    
-    display: flex;
-    flex-direction: column;
     text-align: left;
     font-size: 15px;
+    margin-bottom: 10px;
 }
 
 .conteudo_da_caixa{
@@ -34,10 +37,10 @@
     border-color: #CCCCCC;
     border: 1px solid #ddd;
     border-radius: 6px;
+    margin-bottom: 25px;
     
     
 }
-
 .botao_calcular{
     width: 400px;
     height: 42px;
@@ -50,10 +53,8 @@
     font-size: 13px;
     cursor: pointer;
 }
-
 .modal {
-    display: none-; /* Desativado, por enquanto */
-    position: fixed; 
+    
     z-index: 1; /* Sobreposição */
     left: 0;
     top: 0;
@@ -61,7 +62,6 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
 }
-
 .modal-conteudo {
     background-color: #fff;
     margin: 15% auto; 
@@ -70,4 +70,41 @@
     width: 465px;
     height: 196px;
     text-align: center;
+    border-radius: 8px; 
+}
+.botaoModal , .modal-conteudo p {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+.botaoModal{
+    width: 180.5px;
+    height: 44px;
+    border-radius: 8px;
+}
+.botaoModal:nth-of-type(1){
+    background-color: #ffffff;
+    margin-right: 36px;
+}
+.botaoModal:nth-of-type(2){
+    background-color: #284A5E;
+    color: #ffffff;
+}
+.ExibicaoCalculoFinal , .OBSdesconto{
+color:#54595E99;
+}
+.close{
+display:block;
+font-size: 30px;
+margin-left: 95%;
+width: 24px;
+height: 24px;
+background-color: #e5e5e5;
+border-radius: 50%;
+font-weight: bold;
+}
+.close div{
+    width: 10px;
+    height: 10px;
+    
 }
