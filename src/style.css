@@ -47,7 +47,6 @@
     cursor: pointer;
 }
 .modal {
-    
     z-index: 1; /* Sobreposição */
     left: 0;
     top: 0;
@@ -66,23 +65,38 @@
     text-align: center;
     border-radius: 8px; 
 }
+.modal-conteudo p{
+    margin : 8px;
+    font-size: 14px;
+}
+.modal-conteudo h2{
+    margin: 10px;
+}
 .botaoModal , .modal-conteudo p , .CONCLUIR {
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
 }
-.botaoModal{
+.botaoModal, .btn__concluir{
     width: 180.5px;
     height: 44px;
     border-radius: 8px;
+}
+.btn__concluir{
+    margin-top: 10px;
 }
 .botaoModal:nth-of-type(1){
     background-color: #ffffff;
     margin-right: 36px;
 }
-.botaoModal:nth-of-type(2){
+.botaoModal:nth-of-type(2), .btn__concluir{
     background-color: #284A5E;
     color: #ffffff;
+}
+.botaoModal:hover, .btn__concluir:hover{
+    background-color: #092d40;
+    color: #ffffff;
+    transition: 700ms;
 }
 .ExibicaoCalculoFinal , .OBSdesconto{
     color:#54595E99;
@@ -106,5 +120,6 @@
 }
 .close:hover {
     background-color: #ffcccc; /* Fundo ao passar o mouse */
-    color: #d00;               /* Cor do X ao passar o mouse */
+    color: #d00; 
+    transition: 1s;              /* Cor do X ao passar o mouse */
 }
