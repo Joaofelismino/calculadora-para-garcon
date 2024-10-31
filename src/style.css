@@ -76,7 +76,10 @@
 .modal-conteudo h2{
     margin: 10px;
 }
-.botaoModal , .modal-conteudo p , .CONCLUIR {
+{
+
+}
+.botaoModal , .modal-conteudo p , .CONCLUIR, .modal-conteudo1 h2 {
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
